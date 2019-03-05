@@ -37,11 +37,12 @@ app.get('/siswa/:nama',(request,response)=>{
     response.end("Menampilkan siswa dengan nama : "+ namaSiswa);
 })
 
-app.post('/siswa/',(request,response)=>{
+app.post('/siswa/:id',(request,response)=>{
     //Proses dengan siswa bernama x
+    let id = request.params.id
     let namaSiswa = request.body.nama;
     let alamatSiswa = request.body.alamat;
-    response.end("Menampilkan siswa dengan nama : "+ namaSiswa+ "Alamat : "+alamatSiswa);
+    response.end("Siswa dengan ID" + id + "Telah Terupdate" );
 })  
 
 app.delete('/siswa/:nama',(request,response)=>{
