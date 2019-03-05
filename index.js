@@ -37,12 +37,13 @@ app.get('/siswa/:nama',(request,response)=>{
     response.end("Menampilkan siswa dengan nama : "+ namaSiswa);
 })
 
-app.post('/siswa/:id',(request,response)=>{
+app.post('/siswa',(request,response)=>{
     //Proses dengan siswa bernama x
-    let id = request.params.id
+  
     let namaSiswa = request.body.nama;
     let alamatSiswa = request.body.alamat;
-    response.end("Siswa dengan ID" + id + "Telah Terupdate" );
+    response.end("Menampilkan siswa dengan nama : "+ namaSiswa+ "Alamat : "+alamatSiswa);
+   
 })  
 
 app.delete('/siswa/:nama',(request,response)=>{
@@ -51,11 +52,13 @@ app.delete('/siswa/:nama',(request,response)=>{
     response.end("Siswa dengan nama : "+ namaSiswa+" Akan Dihapus dari Sistem");
 })
 
-app.put('/siswa/',(request,response)=>{
+app.put('/siswa/:id',(request,response)=>{
     //Proses dengan siswa bernama x
+    let id = request.params.id
     let namaSiswa = request.body.nama;
     let alamatSiswa = request.body.alamat;
-    response.end("Menampilkan siswa dengan nama : "+ namaSiswa+ "Alamat : "+alamatSiswa);
+    response.end("Siswa dengan ID" + id + "Telah Terupdate" );
+  
 })  
 
 app.listen('8080',(e)=>{
